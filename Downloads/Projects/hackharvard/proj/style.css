@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace, sans-serif;
+}
+
+body {
+    background-color: black;
+    min-height: 150vh;
+    overflow-x: hidden;
+    color: white;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    transition: 0.6s;
+    z-index: 1000;
+}
+
+header.sticky {
+    padding: 15px 100px;
+    background-color: #fff;
+}
+
+header .logo {
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: color 0.5s;
+}
+
+header.sticky ul li a, header.sticky .logo {
+    color: #000;
+}
+
+.banner {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+}
+
+.ttl {
+    color: #fff;
+    font-size: 55px;
+    transition: color 0.5s;
+    margin-top: 60px;
+}
+
+.title-banner {
+    text-align: center; /* Center align the content in the title banner */
+    padding-top: 40px; /* Space above the title */
+    margin-bottom: 40px; /* Add space below the title banner */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    margin-top: 20px; /* Space between other elements and buttons */
+}
+
+.scroll-button, .api-button {
+    margin: 10px 0; /* Add space between buttons */
+}
+.api-button a{
+    text-decoration: none;
+    color: white;
+}
+.api-button {
+    padding: 12px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    color: white; /* Text color */
+    background-color: #444; /* Background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.api-button:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+}
+
+.api-button:active {
+    transform: scale(0.95); /* Slightly scale down on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Reduced shadow on click */
+}
+
+.dashboard {
+    color: white;
+    display: flex;
+    justify-content: center; /* Center the dashboard */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    padding: 40px; /* Add padding around the dashboard */
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    margin: 100px 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.model-info {
+    padding: 40px; /* Existing styles */
+    margin: 20px auto; /* Existing styles */
+    border-radius: 20px; /* Existing styles */
+    text-align: left; /* Existing styles */
+    height: 600px; /* Increase the height as desired */
+    display: flex; /* Optional: Flexbox for layout */
+    flex-direction: column; /* Optional: Change direction if needed */
+    justify-content: center; /* Optional: Center content vertically */
+}
+
+.model-details {
+    text-align: left;
+    margin: 20px auto;
+    width: 75%;
+    max-width: 500px; /* Optional max width for better readability */
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    height: 300px; /* Fixed height for the details */
+    letter-spacing: 0.5px; /* Adjust this value to increase spacing */
+    font-size: 18px; /* Adjusted size for the main text */
+}
+.model-details p {
+    
+    margin-bottom: 30px; /* Space between each detail */
+}
+
+.model-details span {
+    letter-spacing: 0.5px; /* Increase spacing for headings and paragraphs */
+}
+
+.model-details span {
+    background-color: rgba(255, 255, 255, 0.1); /* Fainter background */
+    padding: 5px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+
+/* Hospital Logs Styling */
+.hospital-logs {
+    margin: 60px auto;
+    width: 70%; /* Adjust as needed */
+    height: 600px;
+    padding: 20px;
+    text-align: center;
+}
+
+.logs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+.model-info h2, .hospital-logs h2 {
+    text-align: center; /* Center titles */
+    margin-bottom: 40px; /* Optional margin below the title */
+}
+.hospital-logs table {
+    width: 100%; /* Make the table wider */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    background-color: #1c1c1c; /* Dark background */
+    color: #f1f1f1; /* Light text color */
+    text-align: left;
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Add a shadow for a nicer effect */
+}
+
+.hospital-logs table th, .hospital-logs table td {
+    padding: 15px 20px; /* Increase padding for more breathing room */
+    border-bottom: 1px solid #333; /* Subtle separator */
+}
+
+.hospital-logs table th {
+    background-color: #444; /* Dark header background */
+    color: #f5f5f5; /* Light header text */
+    font-weight: bold;
+    text-transform: uppercase; /* Make the header text uppercase */
+    letter-spacing: 1px;
+}
+
+.hospital-logs table td {
+    background-color: #2a2a2a; /* Slightly lighter background for rows */
+}
+
+.hospital-logs table tr:nth-child(even) td {
+    background-color: #333; /* Alternate row color for better readability */
+}
+
+.hospital-logs table tr:hover td {
+    background-color: #555; /* Hover effect on table rows */
+    transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+/* Placeholder Row Style */
+.hospital-logs table td[colspan] {
+    background-color: #555;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+/* Reveal Animation */
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* New Slide-in Animation */
+@keyframes slide-in {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Additional Styles for Enhancements */
+a.view-all {
+    color: white; /* Use inherited color (white, in this case) */
+    text-decoration: underline; /* Underlined by default */
+    font-weight: bold; /* Make it bold */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+a.view-all:hover {
+    color: inherit; /* No color change on hover */
+    text-decoration: underline; /* Maintain underline on hover */
+}
+
+footer {
+    text-align: center; /* Center align the footer text */
+    padding: 20px 0; /* Add some vertical padding */
+    background-color: #1a1a1a; /* Dark background for footer */
+    color: #f1f1f1; /* Light text color */
+    position: relative; /* Position relative to the document flow */
+    bottom: 0; /* Align to the bottom of the page */
+    width: 100%; /* Full width */
+}
+
+footer a {
+    color: #f1f1f1; /* Link color */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Bold text */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.view-more {
+    color: white; /* Set the text color to white */
+    text-decoration: underline; /* Maintain underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.view-more:hover {
+    color: #f1f1f1; /* Slightly lighter color on hover, if desired */
+}
+
+#scroll-to-top {
+    position: fixed; /* Keep it fixed in the corner */
+    bottom: 80px; /* Distance from the bottom (above the footer) */
+    right: 20px; /* Distance from the right */
+    padding: 12px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    color: white; /* Text color */
+    background-color: #444; /* Background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+#scroll-to-top:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+}
+
+#scroll-to-top:active {
+    transform: scale(0.95); /* Slightly scale down on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Reduced shadow on click */
+}

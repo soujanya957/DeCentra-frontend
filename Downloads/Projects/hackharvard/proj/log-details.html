@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Details</title>
+    <link rel="stylesheet" href="log-details.css">
+</head>
+<body>
+    <header>
+        <h1>Log Details</h1>
+        <a href="index.html">Back to Dashboard</a>
+    </header>
+    <main id="log-details-container">
+        <!-- Log details will be dynamically inserted here -->
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let logs = [];
+
+            // Function to get URL parameters
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                const results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            }
+
+            // Fetch logs from the JSON file
+            async function fetchLogs() {
+                try {
+                    const response = await fetch('hospital_logs.json'); // Adjust path if needed
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    logs = await response.json();
+                    displayLogDetails();
+                } catch (error) {
+                    console.error('There was a problem with the fetch operation:', error);
+                    logs = []; // Fallback to empty if fetch fails
+                    displayLogDetails();
+                }
+            }
+        // Display log details
+        function displayLogDetails() {
+            const logId = getUrlParameter('logId');
+            const log = logs.find(log => log.id == parseInt(logId, 10)); // Compare with log.id
+
+            const logDetailsContainer = document.getElementById('log-details-container');
+            if (log) {
+                // Create weight boxes
+                const weightBoxes = log.weights.map(weight => `
+                    <div class="weight-box">${weight}</div>
+                `).join('');
+
+                logDetailsContainer.innerHTML = `
+                    <div class="log-card">
+                        <h2>${log.hospital}</h2>
+                        <p><strong>Model Type:</strong> ${log.modelType}</p>
+                        <p><strong>Loss Function:</strong> ${log.lossFunction}</p>
+                        <p><strong>Optimizer:</strong> ${log.optimizer}</p>
+                        <h3>Weights</h3>
+                        <div class="weights-container">${weightBoxes}</div>
+                    </div>
+                `;
+            } else {
+                logDetailsContainer.innerHTML = `
+                    <div class="log-card">
+                        <p>No details found for this log. Please check if the log ID is correct.</p>
+                        <p><a href="index.html">Back to Dashboard</a> or <a href="log-details.html">try again</a>.</p>
+                    </div>
+                `;
+            }
+        }
+           
+            // Fetch logs and display details on page load
+            fetchLogs();
+        });
+    </script>
+</body>
+</html>

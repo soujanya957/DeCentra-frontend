@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace, sans-serif;
+}
+
+body {
+    background-color: black;
+    min-height: 100vh; /* Full viewport height */
+    color: white;
+    display: flex; /* Flexbox to center content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 20px; /* Add padding to prevent content touching edges */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px; /* Adjusted padding */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent header */
+    transition: 0.6s;
+    z-index: 1000;
+}
+
+header h1 {
+    color: white; /* Header text color */
+    margin: 0; /* Remove margin */
+}
+
+header a {
+    color: white; /* Link color */
+    text-decoration: none; /* No underline */
+    font-weight: 500; /* Font weight for links */
+}
+
+#log-details-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 40px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Maximum width for larger screens */
+    color: white; /* Text color */
+    text-align: left; /* Left-align text for readability */
+}
+
+.log-card {
+    margin: 0; /* No margin for the card */
+}
+
+h2 {
+    color: #fff; /* Color for log title */
+    margin-bottom: 20px; /* Margin below title */
+}
+
+h3 {
+    color: #f1f1f1; /* Color for subheading */
+    margin-top: 20px; /* Margin above subheading */
+}
+
+p {
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+a {
+    color: #f1f1f1; /* Link color */
+    text-decoration: underline; /* Underline for links */
+}
+
+a:hover {
+    color: #fff; /* Change color on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.weights-container {
+    display: flex; /* Flexbox for alignment */
+    flex-wrap: wrap; /* Allow wrapping of boxes */
+    margin-top: 15px; /* Space above the weights container */
+    justify-content: flex-start; /* Center the boxes within the container */
+}
+
+.weight-box {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for boxes */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for distinction */
+    padding: 5px; /* Padding inside the box */
+    margin: 5px; /* Margin around each box */
+    border-radius: 5px; /* Rounded corners for the boxes */
+    width: 80px; /* Fixed width for boxes */
+    height: 40px; /* Fixed height for boxes */
+    display: flex; /* Flexbox for content alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Center text in boxes */
+}
+
+/* remove .weights-container and .weight-box if you don't want the rectangle thingy */

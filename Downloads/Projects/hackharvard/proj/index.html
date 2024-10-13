@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeCentras - Federated Learning Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="top"></div>
+    <header>
+        <a href="#top" class="logo">DeCentra</a>
+        <nav>
+            <ul>
+                <li><a href="#dashid">Model Info</a></li>
+                <li><a href="#logs-title">Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="title-banner">
+            <h2 class="ttl">Federated Learning Dashboard</h2>
+                <div class="button-container">
+                    <button class="api-button"><a href="#dashid">↓ View Model Info</a></button>
+                    <button id="button-api" class="api-button">API Action</button>
+                </div>
+        </div>
+    </section>
+
+    <div class="dashboard" id="dashid">
+        
+        <section id="model-info" class="model-info">
+            <h2 id="model-info-title">Model Information</h2>
+                <div class="model-details">
+<p><strong>Type:</strong> <span id="model-type">N/A</span></p>
+            <p><strong>Loss Function:</strong> <span id="loss-function">N/A</span></p>
+            <p><strong>Optimizer:</strong> <span id="optimizer">N/A</span></p>
+            <p><strong>Weights:</strong> <span id="weights">N/A</span></p>
+                </div>
+        </section>
+    </div>
+
+    <div class="logs">
+        <section id="logs" class="hospital-logs">
+            <h2 id="logs-title">Hospital Training Logs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hospital</th>
+                        <th>Log ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="log-entries">
+                    <!-- Logs will be dynamically inserted here using JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <button id="scroll-to-top" class="scroll-button">Scroll to Top</button>
+
+    <footer>
+        <p>Check out the project on <a href="https://github.com/<username>/<repo>" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
