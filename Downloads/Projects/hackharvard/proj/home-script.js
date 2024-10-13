@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Handle "Go to Dashboard" button click
     document.getElementById('to-dashboard')?.addEventListener('click', () => {
         console.log("Navigating to Dashboard");
-        window.location.href = '/';  // Redirect to the dashboard (index.html)
+        window.location.href = 'index.html';  // Redirect to the dashboard (index.html)
     });
 
     // Handle "View Info" button click
@@ -16,5 +16,4 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Some API function button clicked");
         alert('Information about the project will be displayed here.');
     });
-});
 });

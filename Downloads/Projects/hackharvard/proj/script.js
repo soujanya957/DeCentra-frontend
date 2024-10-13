@@ -166,34 +166,43 @@ async function populateHospitalLogs() {
     updateModelInfo();
     populateHospitalLogs();
 
-    // Event listener for "Generate Proofs" button (apiActionOne)
     document.getElementById('apiActionOne').addEventListener('click', function() {
-        console.log("Generate Proofs button clicked, sending request to /generate-proofs");
+        console.log("Generate Proofs button clicked, sending request to /pyfiles/generate-proofs");
 
-        fetch('/generate-proofs')
-            .then(response => response.json())
+        fetch('/pyfiles/generate-proofs')
+            .then(response => {
+                if (!response.ok) {
+                    console.log("Network response was not ok");
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log("Response from /generate-proofs:", data);
+                console.log("Response from /pyfiles/generate-proofs:", data);
                 alert('Proof Generation Response: ' + JSON.stringify(data));
             })
             .catch(error => {
                 console.error("Error occurred during Generate Proofs:", error);
+                alert('Error generating proofs: ' + error.message);
             });
     });
 
-    // Event listener for "Aggregation" button (apiActionTwo)
     document.getElementById('apiActionTwo').addEventListener('click', function() {
-        console.log("Aggregation button clicked, sending request to /aggregation");
+        console.log("Aggregation button clicked, sending request to /pyfiles/aggregation");
 
-        fetch('/aggregation')
-            .then(response => response.json())
+        fetch('/pyfiles/aggregation')
+            .then(response => {
+                if (!response.ok) {
+                    console.log("Network was not ok");
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log("Response from /aggregation:", data);
+                console.log("Response from /pyfiles/aggregation:", data);
                 alert('Aggregation Response: ' + JSON.stringify(data));
             })
             .catch(error => {
                 console.error("Error occurred during Aggregation:", error);
+                alert('Error during aggregation: ' + error.message);
             });
     });
-
 });
