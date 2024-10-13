@@ -25,8 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
     });
 
+    // Function to handle the scroll to the model info section
+    function scrolltoDash() {
+        // Get the element you want to scroll to
+        const modelInfoSection = document.getElementById('dashid');
+        
+        // Scroll to the section smoothly
+        modelInfoSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
     // Add event listener to the button
-    document.getElementById('button-api').addEventListener('click', handleButtonClick);
+    document.getElementById('dashscroll').addEventListener('click', scrolltoDash);
+
+    // Show or hide the scroll to top button based on scroll position
+    window.onscroll = function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block"; // Show the button
+        } else {
+            scrollToTopBtn.style.display = "none"; // Hide the button
+        }
+    };
+
+    // Scroll to top function
+    document.getElementById('scroll-to-top').onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
+    };
+
 
     // Reveal dashboard on scroll and implement sticky header functionality
     window.addEventListener("scroll", () => {
