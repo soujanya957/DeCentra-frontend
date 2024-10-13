@@ -165,4 +165,35 @@ async function populateHospitalLogs() {
     // Initialize the page by updating model info and populating logs
     updateModelInfo();
     populateHospitalLogs();
+
+    // Event listener for "Generate Proofs" button (apiActionOne)
+    document.getElementById('apiActionOne').addEventListener('click', function() {
+        console.log("Generate Proofs button clicked, sending request to /generate-proofs");
+
+        fetch('/generate-proofs')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response from /generate-proofs:", data);
+                alert('Proof Generation Response: ' + JSON.stringify(data));
+            })
+            .catch(error => {
+                console.error("Error occurred during Generate Proofs:", error);
+            });
+    });
+
+    // Event listener for "Aggregation" button (apiActionTwo)
+    document.getElementById('apiActionTwo').addEventListener('click', function() {
+        console.log("Aggregation button clicked, sending request to /aggregation");
+
+        fetch('/aggregation')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response from /aggregation:", data);
+                alert('Aggregation Response: ' + JSON.stringify(data));
+            })
+            .catch(error => {
+                console.error("Error occurred during Aggregation:", error);
+            });
+    });
+
 });

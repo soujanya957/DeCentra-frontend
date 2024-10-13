@@ -89,7 +89,8 @@ header.sticky ul li a, header.sticky .logo {
 
 .button-container {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
+    gap: 50px;
+    justify-content: center; /* Center align buttons */
     align-items: center; /* Center align buttons */
     margin-top: 20px; /* Space between other elements and buttons */
 }
